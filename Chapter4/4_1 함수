@@ -1,0 +1,91 @@
+"""
+ 문제1
+ 주어진 자연수가 홀수인지 짝수인지 판별해 주는 함수(is_odd)를 작성하시오.
+
+"""
+def is_odd(num):
+    if num%2==0:
+        return '짝수'
+    else:
+        return '홀수'
+print("is_odd(2)")
+print(is_odd(2))
+print("\n")
+
+"""
+ 문제2
+ 입력으로 들어오는 모든 수의 평균값을 계산해 주는 함수를 작성하시오.
+ (단, 입력으로 들어오는 수의 갯수는 정해져 있지 않다.)
+
+"""
+def calculator(*args):
+    a=0
+    for i in args:
+        a+=i
+    return a/len(args)
+print("calculator(3,4,5)")
+calculator(3,4,5)
+print("\n")
+
+"""
+ 문제3
+ 입력을 자연수 n(2부터 9까지의 자연수)으로 받았을 때,
+ n에 해당되는 구구단을 출력하는 함수를 작성하시오
+
+"""
+def mul(n):
+    for i in range(1,10):
+        print(n*i)
+    
+print("mul(2)")
+mul(2)
+print("\n")
+
+"""
+ 문제4
+ 입력을 정수 n으로 받았을 때, n 이하까지의
+ 피보나치 수열을 출력하는 함수를 작성하시오.
+
+ 피보나치 수열은 다음과 같은 순서로 결과값을 리턴한다.
+ 1. fib(0) → 0 리턴
+ 2. fib(1) → 1 리턴
+ 3. fib(2) → fib(0) + fib(1) → 0 + 1 → 1 리턴
+ 4. fib(3) → fib(1) + fib(2) → 1 + 1 → 2 리턴
+ 5. fib(4) → fib(2) + fib(3) → 1 + 2 → 3 리턴
+
+"""
+#틀림
+#이유 = 재귀함수 사용x, n값은 양의정수만 입력가능함을 모름
+def fib(n):
+    if n==0:return 0
+    if n==1:return 1
+    return fib(n-2)+fib(n-1)
+
+print("fib(10)")
+for i in range(10):
+    print(fib(i))
+print("\n")
+
+"""
+ 문제5
+ 다음은 숫자들로 이루어진 리스트를 입력으로 받아
+ 5보다 큰 수만 필터링하여 리턴해 주는 함수이다.
+
+ '''
+ >>> def myfunc(numbers):
+ ...     result = []
+ ...     for number in numbers:
+ ...         if number > 5:
+ ...             result.append(number)
+ ...     return result
+ ... 
+ >>> myfunc([2,3,4,5,6,7,8])
+ [6, 7, 8]
+ '''
+ 위 함수를 lambda 함수로 변경해 보시오.
+
+"""
+#접근방식 틀림
+myfunc=lambda numbers:[number for number in numbers if number>5]
+print("myfunc([2,3,4,5,6,7,8])")
+print(myfunc([2,3,4,5,6,7,8]))
