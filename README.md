@@ -4,3 +4,7 @@ Unifox Python Study
 ---------
 + 이터레이터 (반복자) 개념 공부하고 깃허브에 md파일로 보고서 작성(마크다운)
 + iglob 사용해보고 예제코드작성
+
+자료 링크
+--------
+점프 투 파이썬 : https://wikidocs.net/book/1
